@@ -20,10 +20,11 @@ class Main {
 
 	static function main() {
 		if (!FileSystem.exists("config.json")) {
+			File.saveContent()
 			File.saveContent(haxe.Json.stringify({
 				token: "DISCORD TOKEN HERE",
 				openai_token: "OPENAI TOKEN HERE"
-			}), "\t");
+			}, "\t"), "config.json");
 			throw "Config file doesn't exist, the application has generated a new one\nMake sure to edit the new config.json file";
 		} else {
 			var content:String = File.getContent("config.json");
