@@ -20,7 +20,6 @@ class Main {
 
 	static function main() {
 		if (!FileSystem.exists("config.json")) {
-			File.saveContent()
 			File.saveContent(haxe.Json.stringify({
 				token: "DISCORD TOKEN HERE",
 				openai_token: "OPENAI TOKEN HERE"
